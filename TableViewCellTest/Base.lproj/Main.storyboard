@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Magic Tavern-->
@@ -21,14 +23,39 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="vqR-Ws-B6m" customClass="TestTableViewCell" customModule="TableViewCellTest" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="300" id="vqR-Ws-B6m" customClass="TestTableViewCell" customModule="TableViewCellTest" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vqR-Ws-B6m" id="heo-a4-gte">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="299"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Pg-op-S3r">
+                                                    <rect key="frame" x="352" y="8" width="240" height="283"/>
+                                                    <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="5Pg-op-S3r" secondAttribute="height" multiplier="240:299" constant="12.842809364548486" id="5Fg-qn-79h"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wr-Zt-wwz">
+                                                    <rect key="frame" x="280" y="133" width="64" height="33"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="5Pg-op-S3r" secondAttribute="bottom" id="Nez-OF-d3s"/>
+                                                <constraint firstItem="5Pg-op-S3r" firstAttribute="leading" secondItem="4wr-Zt-wwz" secondAttribute="trailing" constant="8" symbolic="YES" id="VFg-Bq-6hX"/>
+                                                <constraint firstItem="4wr-Zt-wwz" firstAttribute="centerY" secondItem="5Pg-op-S3r" secondAttribute="centerY" id="WQc-3x-OF9"/>
+                                                <constraint firstItem="5Pg-op-S3r" firstAttribute="top" secondItem="heo-a4-gte" secondAttribute="topMargin" id="gOn-Ix-OVp"/>
+                                                <constraint firstItem="4wr-Zt-wwz" firstAttribute="centerY" secondItem="heo-a4-gte" secondAttribute="centerY" id="uFD-9f-EhS"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="5Pg-op-S3r" secondAttribute="trailing" id="uir-tF-c0e"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="altLabel" destination="4wr-Zt-wwz" id="XTe-c4-cvk"/>
+                                            <outlet property="badge" destination="5Pg-op-S3r" id="aRM-JL-gi7"/>
                                             <segue destination="oaX-Zs-JEz" kind="show" id="s0Z-yL-amF"/>
                                         </connections>
                                     </tableViewCell>

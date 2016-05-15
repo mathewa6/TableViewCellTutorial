@@ -36,6 +36,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return 1
     }
     
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return self.view.bounds.size.height/9
+    }
     
     //MARK: - UITableView Delegate
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -43,7 +46,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! TestTableViewCell
         
-        cell.altLabel.text = data[indexPath.row]
+        cell.altLabel!.text = data[indexPath.row]
         
         return cell
     }
@@ -51,10 +54,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let dvc = segue.destinationViewController
         let tit = sender as! TestTableViewCell
-        dvc.title = tit.altLabel.text
+        dvc.title = tit.altLabel!.text
     }
     
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
