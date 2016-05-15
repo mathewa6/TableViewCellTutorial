@@ -10,6 +10,8 @@ import UIKit
 
 class TestTableViewCell: UITableViewCell {
 
+    var altLabel: UILabel
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +23,21 @@ class TestTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    override func layoutSubviews() {
+         self.altLabel.frame = self.contentView.bounds
+    }
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        altLabel = UILabel()
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.backgroundColor = UIColor.yellowColor()
+        self.contentView.addSubview(altLabel)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        altLabel = UILabel()
+        super.init(coder: aDecoder)
+        self.backgroundColor = UIColor.redColor()
+        self.contentView.addSubview(altLabel)
+    }
 }

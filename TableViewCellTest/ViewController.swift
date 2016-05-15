@@ -19,6 +19,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Do any additional setup after loading the view, typically from a nib.
         tableView.delegate = self
         tableView.dataSource = self
+//        tableView.registerClass(TestTableViewCell.self, forCellReuseIdentifier: "Cell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,17 +41,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let identifier = "Cell"
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! TestTableViewCell
         
-        cell.textLabel?.text = data[indexPath.row]
+        cell.altLabel.text = data[indexPath.row]
         
         return cell
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let dvc = segue.destinationViewController
-        let tit = sender as! UITableViewCell
-        dvc.title = tit.textLabel?.text
+        let tit = sender as! TestTableViewCell
+        dvc.title = tit.altLabel.text
+    }
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
 }
