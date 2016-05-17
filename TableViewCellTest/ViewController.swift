@@ -20,6 +20,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.delegate = self
         tableView.dataSource = self
 //        tableView.registerClass(TestTableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.registerNib(UINib.init(nibName: "TestTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,6 +59,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("CellSegue", sender: tableView.cellForRowAtIndexPath(indexPath))
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     

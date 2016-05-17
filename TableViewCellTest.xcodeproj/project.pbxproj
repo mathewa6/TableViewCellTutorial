@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B76520DF1CEABC7D0088171F /* TestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76520DE1CEABC7D0088171F /* TestTableViewCell.xib */; };
 		B7CB2BCD1CE81859006DA2F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CB2BCC1CE81859006DA2F6 /* AppDelegate.swift */; };
 		B7CB2BCF1CE81859006DA2F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CB2BCE1CE81859006DA2F6 /* ViewController.swift */; };
 		B7CB2BD21CE81859006DA2F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7CB2BD01CE81859006DA2F6 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B76520DE1CEABC7D0088171F /* TestTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestTableViewCell.xib; sourceTree = "<group>"; };
 		B7CB2BC91CE81859006DA2F6 /* TableViewCellTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewCellTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7CB2BCC1CE81859006DA2F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7CB2BCE1CE81859006DA2F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				B7CB2BCC1CE81859006DA2F6 /* AppDelegate.swift */,
 				B7CB2BCE1CE81859006DA2F6 /* ViewController.swift */,
 				B7CB2BDE1CE81E77006DA2F6 /* TestTableViewCell.swift */,
+				B76520DE1CEABC7D0088171F /* TestTableViewCell.xib */,
 				B7CB2BD01CE81859006DA2F6 /* Main.storyboard */,
 				B7CB2BD31CE81859006DA2F6 /* Assets.xcassets */,
 				B7CB2BD51CE81859006DA2F6 /* LaunchScreen.storyboard */,
@@ -126,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7CB2BD71CE81859006DA2F6 /* LaunchScreen.storyboard in Resources */,
+				B76520DF1CEABC7D0088171F /* TestTableViewCell.xib in Resources */,
 				B7CB2BD41CE81859006DA2F6 /* Assets.xcassets in Resources */,
 				B7CB2BD21CE81859006DA2F6 /* Main.storyboard in Resources */,
 			);
@@ -288,6 +292,7 @@
 				B7CB2BDD1CE81859006DA2F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
